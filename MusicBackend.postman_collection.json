@@ -1,0 +1,583 @@
+{
+	"info": {
+		"_postman_id": "208440fc-e96d-4be9-8b70-ebf7925b93b1",
+		"name": "MusicBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40336160"
+	},
+	"item": [
+		{
+			"name": "welcome",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Test 1\",\r\n    \"email\":\"test1@gmail.com\",\r\n    \"password\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test1@gmail.com\",\r\n    \"password\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxMzkxNzIwLCJleHAiOjE3NTE0MDk3MjB9.q12mRpBwPP4hbpFOmZIslc9zRBsfKRzWElklZVkvFHeKKR7-PqNRQDiwaI12-j_QgMdTSgpiGkuDZDZ-ItDNnA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSong",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxNDc4MDA3LCJleHAiOjE3NTE0OTYwMDd9.Ivd-lcGPHIAUhpnFzWyoMkoncZdGLbrYu2WMmPoMPVkdpqu2sHj2ODE7-sHFq2rj8ZqWzRY99CgU5HlwcLBZDg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f056a64-40cb-4a10-9c9e-b0e44fb1f7aa"
+						},
+						{
+							"key": "title",
+							"value": "ABC",
+							"type": "text"
+						},
+						{
+							"key": "artist",
+							"value": "DEF",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/user/addSong",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"addSong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mySong",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxMzkxNzIwLCJleHAiOjE3NTE0MDk3MjB9.q12mRpBwPP4hbpFOmZIslc9zRBsfKRzWElklZVkvFHeKKR7-PqNRQDiwaI12-j_QgMdTSgpiGkuDZDZ-ItDNnA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/mySong",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"mySong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addLike",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODI0MTA4LCJleHAiOjE3NTE4NDIxMDh9.85Al5sbQYvjRnZi8WApmm2VUwplKZpjrNiIb1XjrrUcYausvaVLxWfK2pCQAjBxbjOr6e3w6XVs_xEfPz_o5ew",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/song/like/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"like",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllSongs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxNDc4MDA3LCJleHAiOjE3NTE0OTYwMDd9.Ivd-lcGPHIAUhpnFzWyoMkoncZdGLbrYu2WMmPoMPVkdpqu2sHj2ODE7-sHFq2rj8ZqWzRY99CgU5HlwcLBZDg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"harshwardhan063@gmail.com\",\r\n    \"password\":\"harshwardhan\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/song/songList/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"songList",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadSong",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxNDc4MDA3LCJleHAiOjE3NTE0OTYwMDd9.Ivd-lcGPHIAUhpnFzWyoMkoncZdGLbrYu2WMmPoMPVkdpqu2sHj2ODE7-sHFq2rj8ZqWzRY99CgU5HlwcLBZDg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/song/download/52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"download",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSong",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxNDc4MDA3LCJleHAiOjE3NTE0OTYwMDd9.Ivd-lcGPHIAUhpnFzWyoMkoncZdGLbrYu2WMmPoMPVkdpqu2sHj2ODE7-sHFq2rj8ZqWzRY99CgU5HlwcLBZDg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/song/delete/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODk4MzE3LCJleHAiOjE3NTE5MTYzMTd9.OGLvBZ7cgAAce088pmB3EOzXZhwbSmISPmSa9kdZZMqUs-05e2UMDQkNYSR5_3zEQg9Nwj69L90Kal0AoVuMwQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"XYZ\",\r\n    \"description\": \"XYZ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/createPlaylist",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"createPlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUBnbWFpbC5jb20iLCJpYXQiOjE3NTE4OTgxMTEsImV4cCI6MTc1MTkxNjExMX0.ffJPUluPc4ymCUYD_V3jvrJu_w6JZposCnrDqTmScvTtBXmeWIiphudI9Rm4Z3ksE9tO-4YO28isl6GcXqtTOg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/playlist/getPlaylist/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"getPlaylist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSongToPlaylist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODI0MTA4LCJleHAiOjE3NTE4NDIxMDh9.85Al5sbQYvjRnZi8WApmm2VUwplKZpjrNiIb1XjrrUcYausvaVLxWfK2pCQAjBxbjOr6e3w6XVs_xEfPz_o5ew",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playlistId\":1,\r\n    \"songId\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/playlist/addSongToPlaylist",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"addSongToPlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "myPlaylist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODk4MzE3LCJleHAiOjE3NTE5MTYzMTd9.OGLvBZ7cgAAce088pmB3EOzXZhwbSmISPmSa9kdZZMqUs-05e2UMDQkNYSR5_3zEQg9Nwj69L90Kal0AoVuMwQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/playlist/myPlaylist",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"myPlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSongFromPlaylist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playlistId\":2,\r\n    \"songId\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/playlist/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByTitle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODk0OTY3LCJleHAiOjE3NTE5MTI5Njd9.sx9bEd9BVjK7zSgFxue3jJNvWTCgMbwNBrePzClOHhYBemG4TH4U6WkHqJNq1teB7UWawjBd_hkz-C5U9Q3mMA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playlistId\":2,\r\n    \"songId\": 6\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/song/searchTitle/abcd",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"searchTitle",
+						"abcd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByArtist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODk0OTY3LCJleHAiOjE3NTE5MTI5Njd9.sx9bEd9BVjK7zSgFxue3jJNvWTCgMbwNBrePzClOHhYBemG4TH4U6WkHqJNq1teB7UWawjBd_hkz-C5U9Q3mMA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/song/searchArtist/f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"song",
+						"searchArtist",
+						"f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePlaylist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODk4MzE3LCJleHAiOjE3NTE5MTYzMTd9.OGLvBZ7cgAAce088pmB3EOzXZhwbSmISPmSa9kdZZMqUs-05e2UMDQkNYSR5_3zEQg9Nwj69L90Kal0AoVuMwQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Updated Title\",\r\n    \"description\":\"Updated description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/playlist/update/52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"update",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlaylist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJzaHdhcmRoYW4wNjNAZ21haWwuY29tIiwiaWF0IjoxNzUxODI0MTA4LCJleHAiOjE3NTE4NDIxMDh9.85Al5sbQYvjRnZi8WApmm2VUwplKZpjrNiIb1XjrrUcYausvaVLxWfK2pCQAjBxbjOr6e3w6XVs_xEfPz_o5ew",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/playlist/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"playlist",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likedByMe",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUBnbWFpbC5jb20iLCJpYXQiOjE3NTE5MDA1NTEsImV4cCI6MTc1MTkxODU1MX0.XyDPJDhti-jm-_UGOH5W9F95QV3tlyVXwaMFwvwiywsdQ_8aLNt-ZlPx0g3MurcOfP0HKyoptfhk-cftKJn9cQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/likedByMe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"likedByMe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
